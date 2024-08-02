@@ -11,6 +11,7 @@ public class Player_Controler : MonoBehaviour
     int current_pos = 0;
 
     public float side_speed;
+    public float running_speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,7 @@ public class Player_Controler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + running_speed * Time.deltaTime);
         if (current_pos == 0)
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow))
