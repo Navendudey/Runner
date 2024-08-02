@@ -12,6 +12,9 @@ public class Player_Controler : MonoBehaviour
 
     public float side_speed;
     public float running_speed;
+    public float jump_Force;
+
+    [SerializeField] Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
@@ -72,6 +75,11 @@ public class Player_Controler : MonoBehaviour
                 Vector3 dir = new Vector3(right_pos.position.x, transform.position.y, transform.position.z) - transform.position;
                 transform.Translate(dir.normalized * side_speed * Time.deltaTime, Space.World);
             }
+        }
+
+        if (Input>getKeyDown(KeyCode.Space))
+        {
+
         }
 
     }
