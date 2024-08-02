@@ -49,18 +49,27 @@ public class Player_Controler : MonoBehaviour
 
         if (current_pos == 0)
         {
-            Vector3 dir = new Vector3(center_pos.position.x, transform.position.y, transform.position.z) - transform.position;
-            transform.Translate(dir.normalized * side_speed * Time.deltaTime, Space.World);
+            if (Vector3.Distance(transform.position, new Vector3(center_pos.position.x, transform.position.y, transform.position.z)) >= 0.1f)
+            {
+                Vector3 dir = new Vector3(center_pos.position.x, transform.position.y, transform.position.z) - transform.position;
+                transform.Translate(dir.normalized * side_speed * Time.deltaTime, Space.World);
+            }
         }
         else if (current_pos == 1)
         {
-            Vector3 dir = new Vector3(left_pos.position.x, transform.position.y, transform.position.z) - transform.position;
-            transform.Translate(dir.normalized * side_speed * Time.deltaTime, Space.World);
+            if (Vector3.Distance(transform.position, new Vector3(left_pos.position.x, transform.position.y, transform.position.z)) >= 0.1f)
+            {
+                Vector3 dir = new Vector3(left_pos.position.x, transform.position.y, transform.position.z) - transform.position;
+                transform.Translate(dir.normalized * side_speed * Time.deltaTime, Space.World);
+            }
         }
         else if (current_pos == 2)
         {
-            Vector3 dir = new Vector3(right_pos.position.x, transform.position.y, transform.position.z) - transform.position;
-            transform.Translate(dir.normalized * side_speed * Time.deltaTime, Space.World);
+            if (Vector3.Distance(transform.position, new Vector3(right_pos.position.x, transform.position.y, transform.position.z)) >= 0.1f)
+            {
+                Vector3 dir = new Vector3(right_pos.position.x, transform.position.y, transform.position.z) - transform.position;
+                transform.Translate(dir.normalized * side_speed * Time.deltaTime, Space.World);
+            }
         }
 
     }

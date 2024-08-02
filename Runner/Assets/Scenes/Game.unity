@@ -276,7 +276,7 @@ MonoBehaviour:
   center_pos: {fileID: 1932440934}
   left_pos: {fileID: 52255443}
   right_pos: {fileID: 559664293}
-  side_speed: 0
+  side_speed: 15
 --- !u!1 &559664292
 GameObject:
   m_ObjectHideFlags: 0
