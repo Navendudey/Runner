@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class CamScript : MonoBehaviour
 {
+    public Transform Player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -11,8 +13,8 @@ public class NewBehaviourScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        
+        transform.position = new Vector3(transform.position.x, transform.position.y, Player.transform.position.z - 14f);
     }
 }
