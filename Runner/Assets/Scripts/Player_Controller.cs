@@ -77,9 +77,10 @@ public class Player_Controler : MonoBehaviour
             }
         }
 
-        if (Input>getKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-
+            //rb.AddForce(Vector3.up * jump_Force);
+            rb.velocity = Vector3.up * jump_Force;
         }
 
     }

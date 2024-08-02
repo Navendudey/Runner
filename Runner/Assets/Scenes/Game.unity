@@ -406,6 +406,8 @@ MonoBehaviour:
   right_pos: {fileID: 559664293}
   side_speed: 15
   running_speed: 10
+  jump_Force: 500
+  rb: {fileID: 226087815}
 --- !u!54 &226087815
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -414,9 +416,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 226087809}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 1.5
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
