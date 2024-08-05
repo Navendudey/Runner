@@ -476,6 +476,7 @@ MonoBehaviour:
   running_speed: 10
   jump_Force: 7
   rb: {fileID: 226087815}
+  player_Animator: {fileID: 0}
 --- !u!54 &226087815
 Rigidbody:
   m_ObjectHideFlags: 0

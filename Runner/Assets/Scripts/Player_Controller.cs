@@ -20,9 +20,14 @@ public class Player_Controler : MonoBehaviour
     public float jump_Force;
 
     [SerializeField] Rigidbody rb;
+
+    bool isGameStarted = false;
+
+    [SerializeField] Animator player_Animator;
     // Start is called before the first frame update
     void Start()
     {
+        isGameStarted = false ;
         current_pos = 0;    // 0 = center , 1  = Left , 2 = Right
         dragDistance = Screen.height * 15 / 100; //dragDistance is 15% height of the screen
     }
@@ -30,35 +35,47 @@ public class Player_Controler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + running_speed * Time.deltaTime);
-#if UNITY_EDITOR        
+        if (!isGameStarted)
+        {
+            if(Input.GetMouseButtonDown(0))
+            {
+                Debug.Log("Game is Started");
+                isGameStarted = true ;
+            }
+        }
 
-        if (current_pos == 0)
-        {
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                current_pos = 1;
-            }
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                current_pos = 2;
-            }
-        }
-        else if (current_pos == 1)
-        {
-            if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                current_pos = 0;
-            }
-        }
-        else if (current_pos == 2)
-        {
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                current_pos = 0;
-            }
 
-        }
+        if (isGameStarted)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + running_speed * Time.deltaTime);
+#if UNITY_EDITOR
+
+            if (current_pos == 0)
+            {
+                if (Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    current_pos = 1;
+                }
+                else if (Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    current_pos = 2;
+                }
+            }
+            else if (current_pos == 1)
+            {
+                if (Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    current_pos = 0;
+                }
+            }
+            else if (current_pos == 2)
+            {
+                if (Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    current_pos = 0;
+                }
+
+            }
 
 #elif UNITY_ANDROID
 
@@ -132,38 +149,38 @@ public class Player_Controler : MonoBehaviour
 
 #endif
 
-        if (current_pos == 0)
-        {
-            if (Vector3.Distance(transform.position, new Vector3(center_pos.position.x, transform.position.y, transform.position.z)) >= 0.1f)
+            if (current_pos == 0)
             {
-                Vector3 dir = new Vector3(center_pos.position.x, transform.position.y, transform.position.z) - transform.position;
-                transform.Translate(dir.normalized * side_speed * Time.deltaTime, Space.World);
+                if (Vector3.Distance(transform.position, new Vector3(center_pos.position.x, transform.position.y, transform.position.z)) >= 0.1f)
+                {
+                    Vector3 dir = new Vector3(center_pos.position.x, transform.position.y, transform.position.z) - transform.position;
+                    transform.Translate(dir.normalized * side_speed * Time.deltaTime, Space.World);
+                }
             }
-        }
-        else if (current_pos == 1)
-        {
-            if (Vector3.Distance(transform.position, new Vector3(left_pos.position.x, transform.position.y, transform.position.z)) >= 0.1f)
+            else if (current_pos == 1)
             {
-                Vector3 dir = new Vector3(left_pos.position.x, transform.position.y, transform.position.z) - transform.position;
-                transform.Translate(dir.normalized * side_speed * Time.deltaTime, Space.World);
+                if (Vector3.Distance(transform.position, new Vector3(left_pos.position.x, transform.position.y, transform.position.z)) >= 0.1f)
+                {
+                    Vector3 dir = new Vector3(left_pos.position.x, transform.position.y, transform.position.z) - transform.position;
+                    transform.Translate(dir.normalized * side_speed * Time.deltaTime, Space.World);
+                }
             }
-        }
-        else if (current_pos == 2)
-        {
-            if (Vector3.Distance(transform.position, new Vector3(right_pos.position.x, transform.position.y, transform.position.z)) >= 0.1f)
+            else if (current_pos == 2)
             {
-                Vector3 dir = new Vector3(right_pos.position.x, transform.position.y, transform.position.z) - transform.position;
-                transform.Translate(dir.normalized * side_speed * Time.deltaTime, Space.World);
+                if (Vector3.Distance(transform.position, new Vector3(right_pos.position.x, transform.position.y, transform.position.z)) >= 0.1f)
+                {
+                    Vector3 dir = new Vector3(right_pos.position.x, transform.position.y, transform.position.z) - transform.position;
+                    transform.Translate(dir.normalized * side_speed * Time.deltaTime, Space.World);
+                }
             }
-        }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            //rb.AddForce(Vector3.up * jump_Force);
-            rb.velocity = Vector3.up * jump_Force;
-            
-        }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                //rb.AddForce(Vector3.up * jump_Force);
+                rb.velocity = Vector3.up * jump_Force;
 
+            }
+        }
     }
 
 }
