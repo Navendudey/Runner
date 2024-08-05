@@ -476,7 +476,7 @@ MonoBehaviour:
   running_speed: 10
   jump_Force: 7
   rb: {fileID: 226087815}
-  player_Animator: {fileID: 0}
+  player_Animator: {fileID: 996534013}
 --- !u!54 &226087815
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1909,6 +1909,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Idle Pose
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 3476e24c06825184ba14744393752b96, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: bf067216b6e8cda4686c20eea418949d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1917,6 +1921,11 @@ PrefabInstance:
 --- !u!4 &996534012 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3476e24c06825184ba14744393752b96, type: 3}
+  m_PrefabInstance: {fileID: 996534011}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &996534013 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 3476e24c06825184ba14744393752b96, type: 3}
   m_PrefabInstance: {fileID: 996534011}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1065620485
