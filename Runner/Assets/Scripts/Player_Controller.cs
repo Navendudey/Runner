@@ -8,6 +8,11 @@ public class Player_Controler : MonoBehaviour
     [SerializeField] Transform left_pos;
     [SerializeField] Transform right_pos;
 
+    [Header ("Android Controls")]
+    private Vector3 fp;   //First touch position
+    private Vector3 lp;   //Last touch position
+    private float dragDistance;  //minimum distance for a swipe to be registered
+
     int current_pos = 0;
 
     public float side_speed;
