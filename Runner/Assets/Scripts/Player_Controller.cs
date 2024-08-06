@@ -42,6 +42,7 @@ public class Player_Controler : MonoBehaviour
                 Debug.Log("Game is Started");
                 isGameStarted = true ;
                 player_Animator.SetInteger("isRunning", 1);
+               
             }
         }
 
