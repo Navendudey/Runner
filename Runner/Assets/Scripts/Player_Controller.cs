@@ -201,7 +201,9 @@ public class Player_Controler : MonoBehaviour
         {
             isGameStarted = false;
             isGameOver = true;
+            player_Animator.applyRootMotion = true;
             player_Animator.SetInteger("isDied", 1);
+             
         }
     }
 
