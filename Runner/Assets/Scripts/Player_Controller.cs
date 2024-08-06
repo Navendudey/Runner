@@ -42,7 +42,7 @@ public class Player_Controler : MonoBehaviour
                 Debug.Log("Game is Started");
                 isGameStarted = true ;
                 player_Animator.SetInteger("isRunning", 1);
-               
+                player_Animator.speed = 1.3f;
             }
         }
 
@@ -178,11 +178,19 @@ public class Player_Controler : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                //rb.AddForce(Vector3.up * jump_Force);
+                
                 rb.velocity = Vector3.up * jump_Force;
+                StartCoroutine(Jump());
 
             }
         }
+    }
+
+    IEnumerator Jump()
+    {
+        player_Animator.SetInteger("isJump", 1);
+        yield return new WaitForSeconds(0.1f);
+        player_Animator.SetInteger("isJump", 0);
     }
 
 }
