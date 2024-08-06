@@ -205,7 +205,7 @@ public class Player_Controler : MonoBehaviour
             player_Animator.SetInteger("isDied", 1);
             rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
             rb.isKinematic = true;
-            rb.velocity = Vector3.zero;
+            
             rb.interpolation = RigidbodyInterpolation.Interpolate;
 
         }
