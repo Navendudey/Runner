@@ -203,7 +203,9 @@ public class Player_Controler : MonoBehaviour
             isGameOver = true;
             player_Animator.applyRootMotion = true;
             player_Animator.SetInteger("isDied", 1);
-             
+            Vector3 adjustedPosition = new Vector3(transform.position.x, collision.transform.position.y + 1.0f, transform.position.z);
+            transform.position = adjustedPosition;
+
         }
     }
 
