@@ -22,12 +22,14 @@ public class Player_Controler : MonoBehaviour
     [SerializeField] Rigidbody rb;
 
     bool isGameStarted = false;
+    bool isGameOver = false;
 
     [SerializeField] Animator player_Animator;
     // Start is called before the first frame update
     void Start()
     {
         isGameStarted = false ;
+        isGameOver = false ;
         current_pos = 0;    // 0 = center , 1  = Left , 2 = Right
         dragDistance = Screen.height * 15 / 100; //dragDistance is 15% height of the screen
     }
@@ -35,7 +37,7 @@ public class Player_Controler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isGameStarted)
+        if (!isGameStarted || !isGameOver)
         {
             if(Input.GetMouseButtonDown(0))
             {
@@ -191,6 +193,16 @@ public class Player_Controler : MonoBehaviour
         player_Animator.SetInteger("isJump", 1);
         yield return new WaitForSeconds(0.1f);
         player_Animator.SetInteger("isJump", 0);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Object")
+        {
+            isGameStarted = false;
+            isGameOver = true;
+            player_Animator.SetInteger("isDied", 1);
+        }
     }
 
 }
