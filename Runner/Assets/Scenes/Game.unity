@@ -3708,10 +3708,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1780351737568190, guid: ed7795f4883cb97468521311f1be4e22, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2017441921}
+      addedObject: {fileID: 2017441920}
     - targetCorrespondingSourceObject: {fileID: 1780351737568190, guid: ed7795f4883cb97468521311f1be4e22, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2017441920}
+      addedObject: {fileID: 2017441921}
   m_SourcePrefab: {fileID: 100100000, guid: ed7795f4883cb97468521311f1be4e22, type: 3}
 --- !u!4 &1394072431 stripped
 Transform:
@@ -5302,8 +5302,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.7160687, y: 1.4981326, z: 4.27231}
+  m_Center: {x: 0.087484956, y: 0.15754479, z: 0.30852628}
 --- !u!1001 &2047739631
 PrefabInstance:
   m_ObjectHideFlags: 0
