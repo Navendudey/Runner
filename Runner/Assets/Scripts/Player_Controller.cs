@@ -32,7 +32,7 @@ public class Player_Controler : MonoBehaviour
         isGameStarted = false ;
         isGameOver = false ;
         current_pos = 0;    // 0 = center , 1  = Left , 2 = Right
-        dragDistance = Screen.height * 5 / 100; //dragDistance is 15% height of the screen
+        dragDistance = Screen.height * 1 / 100; //dragDistance is 5% height of the screen
     }
 
     // Update is called once per frame
@@ -202,9 +202,9 @@ public class Player_Controler : MonoBehaviour
 
     IEnumerator Jump()
     {
-        player_Animator.SetInteger("isSlide", 1);
+        player_Animator.SetInteger("isJump", 1);
         yield return new WaitForSeconds(0.1f);
-        player_Animator.SetInteger("isSlide", 0);
+        player_Animator.SetInteger("isJump", 0);
     }
 
     IEnumerator Slide()
