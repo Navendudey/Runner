@@ -31,7 +31,7 @@ public class Player_Controler : MonoBehaviour
         isGameStarted = false ;
         isGameOver = false ;
         current_pos = 0;    // 0 = center , 1  = Left , 2 = Right
-        dragDistance = Screen.height * 15 / 100; //dragDistance is 15% height of the screen
+        dragDistance = Screen.height * 5 / 100; //dragDistance is 15% height of the screen
     }
 
     // Update is called once per frame
