@@ -143,6 +143,8 @@ public class Player_Controler : MonoBehaviour
                         else
                         {   //Down swipe
                             Debug.Log("Down Swipe");
+                            rb.velocity = Vector3.down * slide_Force;
+                            StartCoroutine(Slide());
                         }
                     }
                 }
@@ -200,9 +202,9 @@ public class Player_Controler : MonoBehaviour
 
     IEnumerator Jump()
     {
-        player_Animator.SetInteger("isJump", 1);
+        player_Animator.SetInteger("isSlide", 1);
         yield return new WaitForSeconds(0.1f);
-        player_Animator.SetInteger("isJump", 0);
+        player_Animator.SetInteger("isSlide", 0);
     }
 
     IEnumerator Slide()
