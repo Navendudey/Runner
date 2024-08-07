@@ -18,6 +18,7 @@ public class Player_Controler : MonoBehaviour
     public float side_speed;
     public float running_speed;
     public float jump_Force;
+    public float slide_Force;
 
     [SerializeField] Rigidbody rb;
 
@@ -186,6 +187,14 @@ public class Player_Controler : MonoBehaviour
                 StartCoroutine(Jump());
 
             }
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+
+                rb.velocity = Vector3.down * slide_Force;
+                StartCoroutine(Slide());
+
+            }
+
         }
     }
 
@@ -194,6 +203,13 @@ public class Player_Controler : MonoBehaviour
         player_Animator.SetInteger("isJump", 1);
         yield return new WaitForSeconds(0.1f);
         player_Animator.SetInteger("isJump", 0);
+    }
+
+    IEnumerator Slide()
+    {
+        player_Animator.SetInteger("isSlide", 1);
+        yield return new WaitForSeconds(0.1f);
+        player_Animator.SetInteger("isSlide", 0);
     }
 
     private void OnCollisionEnter(Collision collision)
