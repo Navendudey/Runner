@@ -159,7 +159,7 @@ public class Player_Controler : MonoBehaviour
 
             if (current_pos == 0)
             {
-                if (Vector3.Distance(transform.position, new Vector3(center_pos.position.x, transform.position.y, transform.position.z)) >= 0.1f)
+                if (Vector3.Distance(transform.position, new Vector3(center_pos.position.x, transform.position.y, transform.position.z)) >= 0.5f)
                 {
                     Vector3 dir = new Vector3(center_pos.position.x, transform.position.y, transform.position.z) - transform.position;
                     transform.Translate(dir.normalized * side_speed * Time.deltaTime, Space.World);
@@ -167,7 +167,7 @@ public class Player_Controler : MonoBehaviour
             }
             else if (current_pos == 1)
             {
-                if (Vector3.Distance(transform.position, new Vector3(left_pos.position.x, transform.position.y, transform.position.z)) >= 0.1f)
+                if (Vector3.Distance(transform.position, new Vector3(left_pos.position.x, transform.position.y, transform.position.z)) >= 0.5f)
                 {
                     Vector3 dir = new Vector3(left_pos.position.x, transform.position.y, transform.position.z) - transform.position;
                     transform.Translate(dir.normalized * side_speed * Time.deltaTime, Space.World);
@@ -175,7 +175,7 @@ public class Player_Controler : MonoBehaviour
             }
             else if (current_pos == 2)
             {
-                if (Vector3.Distance(transform.position, new Vector3(right_pos.position.x, transform.position.y, transform.position.z)) >= 0.1f)
+                if (Vector3.Distance(transform.position, new Vector3(right_pos.position.x, transform.position.y, transform.position.z)) >= 0.5f)
                 {
                     Vector3 dir = new Vector3(right_pos.position.x, transform.position.y, transform.position.z) - transform.position;
                     transform.Translate(dir.normalized * side_speed * Time.deltaTime, Space.World);
