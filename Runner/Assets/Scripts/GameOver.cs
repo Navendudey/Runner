@@ -7,12 +7,21 @@ using TMPro;
 public class GameOver : MonoBehaviour
 {
     // Start is called before the first frame update
-   void Start()
+
+
+public class GameOverManager : MonoBehaviour
+{
+    public string gameOverSceneName = "GameOver";  // Name of the scene to load when game is over
+
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        // Check if the object the player collided with has the tag "Obstacle"
+        if (collision.gameObject.CompareTag("Object"))
+        {
+            // Load the Game Over scene
+            SceneManager.LoadScene(gameOverSceneName);
+        }
     }
-    public void Restart_Button()
-    {
-        SceneManager.LoadScene(0);
-    }
+}
+
 }

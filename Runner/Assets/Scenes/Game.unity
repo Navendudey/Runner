@@ -2250,7 +2250,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 342026408}
+      - m_Target: {fileID: 1507744958}
         m_TargetAssemblyTypeName: 
         m_MethodName: 
         m_Mode: 1
@@ -2275,7 +2275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7110,7 +7110,6 @@ GameObject:
   - component: {fileID: 1507744962}
   - component: {fileID: 1507744961}
   - component: {fileID: 1507744960}
-  - component: {fileID: 1507744959}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -7118,18 +7117,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1507744959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1507744958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69d12cd179dfc4449b42aecab24452dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1507744960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10111,6 +10098,7 @@ GameObject:
   - component: {fileID: 1868482597}
   - component: {fileID: 1868482599}
   - component: {fileID: 1868482598}
+  - component: {fileID: 1868482600}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -10176,6 +10164,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868482596}
   m_CullTransparentMesh: 1
+--- !u!114 &1868482600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868482596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69d12cd179dfc4449b42aecab24452dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1871911968
 PrefabInstance:
   m_ObjectHideFlags: 0
