@@ -7,7 +7,11 @@ using TMPro;
 public class GameOver : MonoBehaviour
 {
     // Start is called before the first frame update
-public void Restart_Button()
+   void Start()
+    {
+        
+    }
+    public void Restart_Button()
     {
         SceneManager.LoadScene(0);
     }
