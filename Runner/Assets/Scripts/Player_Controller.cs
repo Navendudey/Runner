@@ -8,6 +8,7 @@ public class Player_Controler : MonoBehaviour
     [SerializeField] Transform left_pos;
     [SerializeField] Transform right_pos;
 
+
     [Header ("Android Controls")]
     private Vector3 fp;   //First touch position
     private Vector3 lp;   //Last touch position
@@ -27,6 +28,7 @@ public class Player_Controler : MonoBehaviour
 
     [SerializeField] Animator player_Animator;
     // Start is called before the first frame update
+    [SerializeField] GameObject GameOverPanle;
     void Start()
     {
         isGameStarted = false ;
@@ -197,6 +199,13 @@ public class Player_Controler : MonoBehaviour
 
             }
 
+        }
+        if (isGameOver)
+        {
+            if(!GameOverPanle.gameObject.active)
+            {
+                GameOverPanle.SetActive(true);
+            }
         }
     }
 
