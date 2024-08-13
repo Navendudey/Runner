@@ -26,6 +26,8 @@ public class Player_Controler : MonoBehaviour
     bool isGameStarted = false;
     bool isGameOver = false;
 
+    private bool isGrounded = true;
+
     [SerializeField] Animator player_Animator;
     // Start is called before the first frame update
     [SerializeField] GameObject GameOverPanle;
@@ -135,7 +137,7 @@ public class Player_Controler : MonoBehaviour
                     }
                     else
                     {   //the vertical movement is greater than the horizontal movement
-                        if (lp.y > fp.y)  //If the movement was up
+                        if (lp.y > fp.y && isGrounded)  //If the movement was up
                         {   //Up swipe
                             Debug.Log("Up Swipe");
                             rb.velocity = Vector3.up * jump_Force;
@@ -184,7 +186,7 @@ public class Player_Controler : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (isGrounded && Input.GetKeyDown(KeyCode.Space))
             {
                 
                 rb.velocity = Vector3.up * jump_Force;
@@ -202,7 +204,7 @@ public class Player_Controler : MonoBehaviour
         }
         if (isGameOver)
         {
-            if(!GameOverPanle.gameObject.active)
+            if(!GameOverPanle.gameObject.activeSelf)
             {
                 GameOverPanle.SetActive(true);
             }
