@@ -4743,6 +4743,7 @@ Rigidbody:
   m_Constraints: 126
   m_CollisionDetection: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1894832650
 GameObject:
   m_ObjectHideFlags: 0
@@ -4877,6 +4878,8 @@ CanvasRenderer:
   m_GameObject: {fileID: 1894832650}
   m_CullTransparentMesh: 1
 >>>>>>> 9af669a8bbc7f2ad22950450584a8a13ab712530
+=======
+>>>>>>> parent of 9af669a (ff)
 =======
 >>>>>>> parent of 9af669a (ff)
 --- !u!1 &1895134102
